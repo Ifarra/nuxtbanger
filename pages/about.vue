@@ -6,6 +6,7 @@
         Go to Home Page
       </nuxt-link>
     </div>
+    
   </template>
   
   <script>
