@@ -1,9 +1,10 @@
 <template>
-
-    <section class="px-4 py-24 mx-auto max-w-7xl">
+<StickyHeader />
+    <section class="px-4 pt-24 md:py-24 mx-auto max-w-7xl">
+      
       <div class="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
         <h1 class="mb-6 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
-          I collect <span class="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-purple-500 lg:inline">cute banger</span> anime picture
+          Collect your<span class="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-purple-500 lg:inline"> cute banger</span> anime picture with us!!
         </h1>
         <p class="px-0 mb-6 text-lg text-gray-600 md:text-xl lg:px-24">
           Idk what im doing but nuxtjs is cool, i haven't sleep for about 3 days! howly shit im going insane!!
@@ -27,8 +28,14 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="w-full mx-auto mt-20 text-center md:w-10/12">
-        <img src="https://www.hdwallpapers.in/download/astolfo_with_purple_eyes_hd_astolfo-1920x1080.jpg" alt="Hellonext feedback boards software screenshot" class="w-full rounded-lg shadow-2xl" />
+      <div class="w-full mx-auto md:mt-20 text-center md:w-10/12">
+        <div class="w-full rounded-lg shadow-2xl" 
+             style="background-image: url('https://www.hdwallpapers.in/download/astolfo_with_purple_eyes_hd_astolfo-1920x1080.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    padding-bottom: 56.25%; /* Maintain aspect ratio (16:9) */
+                    ">
+        </div>
       </div>
     </section>
 

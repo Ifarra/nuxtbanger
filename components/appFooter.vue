@@ -1,6 +1,6 @@
 <template>
     <footer class="flex flex-col items-center justify-between px-4 py-12 mx-auto max-w-7xl md:flex-row">
-      <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright 2020 Skcript. All Rights Reserved.</p>
+      <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">© Copyright 2024 Ifarra. All Rights Reserved.</p>
       <div class="flex items-center space-x-6">
         <a href="#">
           <span class="sr-only">Twitter</span>
