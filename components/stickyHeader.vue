@@ -2,8 +2,8 @@
    <header class="z-30 w-full px-2 py-4 bg-white sm:px-4 fixed shadow-lg">
   <div class="flex items-center justify-between mx-auto max-w-7xl">
     <a href="/" title="Kutty Home Page" class="flex items-center gap-4">
-      <img src="../public/astolfo.png" alt="" class="h-8 w-8 drop-shadow-[2px_1px_rgba(0,0,0,0.7)]">
-      <span class="font-bold text-xl text-pink-300 drop-shadow-[2px_1px_rgba(0,0,0,0.7)]">Banger :3</span>
+      <img src="../public/astolfo.png" alt="" class="h-8 w-8 ">
+      <span class="font-extrabold text-2xl bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 text-transparent">Banger :3</span>
     </a>
     <div class="relative hidden space-x-1 md:inline-flex" x-data="{ one: false, two: false }">
       <div class="relative">
@@ -122,11 +122,17 @@
           </div>
         </div>
       </div>
-      <a href="#" class="rounded-full btn btn-sm btn-white">Pricing</a>
+      <a href="/picture" class="rounded-full btn btn-sm btn-white">Pictures</a>
     </div>
     <div class="flex items-center space-x-1">
-      <a href="#" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</a>
-      <a href="#" class="rounded-full btn btn-sm btn-dark">Sign up</a>
+      <div v-if="!sessionId" class="pl-8">
+        <a href="/sign-in" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</a>
+        <a href="/sign-up" class="rounded-full btn btn-sm btn-dark">Sign up</a>
+      </div>
+      <div v-else :sign-out-options="{ sessionId }"  class="pl-28">
+        <SignOutButton />
+      </div>
+      
       <div class="inline-flex md:hidden" x-data="{ open: false }">
         <button class="flex-none px-2 btn btn-white btn-sm" x-on:click="open = true">
           <svg
@@ -206,6 +212,8 @@
 
 
 <script setup>
+
+const { sessionId } = useAuth()
 
 useHead({
     title: 'My Nuxt App',

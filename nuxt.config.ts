@@ -11,4 +11,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['vue-clerk/nuxt'],
+  clerk: {
+    appearance: {},
+  },
+  runtimeConfig: {
+    public: {
+      supabase_url: process.env.NUXT_PUBLIC_SUPABASE_URL,
+      supabase_key: process.env.NUXT_PUBLIC_SUPABASE_KEY
+    }
+  }
 })

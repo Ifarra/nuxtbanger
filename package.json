@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@clerk/backend": "^1.17.0",
+    "@supabase/supabase-js": "^2.46.1",
     "autoprefixer": "^10.4.20",
     "install": "^0.13.0",
     "kutty": "^0.6.0",
@@ -17,6 +19,7 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vue": "latest",
+    "vue-clerk": "^0.8.5",
     "vue-router": "latest"
   }
 }

@@ -1,15 +1,404 @@
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 class="text-4xl font-bold text-blue-600">Welcome to My Nuxt.js App</h1>
-      <p class="mt-4 text-lg text-gray-700">This is a simple homepage styled with Tailwind CSS.</p>
-      <nuxt-link to="/" class="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        Go to Home Page
-      </nuxt-link>
+  <StickyHeader />
+  <section class="px-4 py-32 pb-20 mx-auto max-w-7xl">
+  <div class="w-full mx-auto text-left md:w-11/12 xl:w-8/12 md:text-center">
+    <h1 class="mb-3 text-4xl font-bold text-gray-900 md:text-5xl md:leading-tight md:font-extrabold">A secure, faster way to transfer.</h1>
+    <p class="mb-6 text-lg text-gray-500 md:text-xl md:leading-normal">
+      We’re on a mission to bring transparency to finance. We charge as little as possible, and we always show you upfront. No hidden fees. No bad exchange rates. No surprises.
+    </p>
+    <div class="flex flex-col justify-start mb-3 space-x-0 space-y-2 text-xs text-gray-600 md:flex-row md:justify-center md:space-x-8 md:space-y-0">
+      <div class="flex items-center">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 mr-1 text-green-600">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        No credit card required
+      </div>
+      <div class="flex items-center">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 mr-1 text-green-600">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        14 days free
+      </div>
+      <div class="flex items-center">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 mr-1 text-green-600">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        Cancel anytime
+      </div>
     </div>
-    
+  </div>
+</section>
+
+<section class="px-4 py-24 mx-auto max-w-7xl">
+  <div class="grid items-center grid-cols-1 mb-24 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+    <div>
+      <h2 class="mb-4 text-2xl font-extrabold tracking-tight text-center text-black md:leading-tight sm:text-left md:text-4xl">Clear overview for efficient tracking</h2>
+      <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
+        Handle your subscriptions and transactions efficiently with the clear overview in Dashboard. Features like the smart search option allow you to quickly find any data you’re looking for.
+      </p>
+      <a href="#" class="w-full btn btn-dark btn-lg sm:w-auto">Learn More</a>
+    </div>
+    <div class="w-full h-full py-48 bg-gray-200"></div>
+  </div>
+  <div class="grid flex-col-reverse items-center grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-32 gap-x-10 md:gap-x-24">
+    <div class="order-none md:order-2">
+      <h2 class="mb-4 text-2xl font-extrabold tracking-tight text-center text-black md:leading-tight sm:text-left md:text-4xl">Decide how you integrate Payments</h2>
+      <p class="mb-5 text-base text-center text-gray-600 sm:text-left md:text-lg">
+        Love to code? Next to our ready-made and free plugins you can use our expansive yet simple API; decide how you integrate Payments and build advanced and reliable products yourself from
+        scratch.
+      </p>
+      <a href="#" class="w-full btn btn-dark btn-lg sm:w-auto">Learn More</a>
+    </div>
+    <div class="w-full h-full py-48 bg-gray-200"></div>
+  </div>
+</section>
+
+<section class="px-4 py-20 mx-auto max-w-7xl">
+  <h2 class="mb-1 text-3xl font-extrabold leading-tight text-gray-900">Features</h2>
+  <p class="mb-16 text-lg text-gray-500">Get insights to dig down into what's powering your growth the most.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-16 lg:gap-x-24 gap-y-20">
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-red-600 bg-red-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Personal Emails</h3>
+      <p class="text-sm text-gray-500">Hand crafted dashboards for everything from Recurring Revenue to Customer Churn.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-pink-600 bg-pink-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Why a beaker icon?</h3>
+      <p class="text-sm text-gray-500">Your central hub that helps you see, and react to, absolutely everything that’s happening.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-yellow-600 bg-yellow-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Clickable</h3>
+      <p class="text-sm text-gray-500">Stay informed with daily, weekly, or monthly reports on all your insights data.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-green-600 bg-green-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
+            clip-rule="evenodd"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z"
+            clip-rule="evenodd"
+          />
+          <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Finger Printing</h3>
+      <p class="text-sm text-gray-500">Our forecasting is your magical crystal ball that helps you predict and plan for the future.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-purple-600 bg-purple-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Performance on Fire</h3>
+      <p class="text-sm text-gray-500">How does your company compare? Learn how your company stacks up in the industry.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-blue-600 bg-blue-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Love is in the Air</h3>
+      <p class="text-sm text-gray-500">Organize your customers to bring meaningful and comparative insights across your dashboards.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-indigo-600 bg-indigo-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Thunder and Lightning</h3>
+      <p class="text-sm text-gray-500">Improve your conversion rates by monitoring exactly what’s going on while your customers are in trial.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-purple-600 bg-purple-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Puzzles</h3>
+      <p class="text-sm text-gray-500">Personalized segmentation, rich customer profiles, manual subscriptions, and more!</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-pink-600 bg-pink-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Sparkles</h3>
+      <p class="text-sm text-gray-500">Merge external data with your metrics for deeper insights in to your customers and your business.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-red-600 bg-red-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Stars</h3>
+      <p class="text-sm text-gray-500">Want your metrics in other services? Extend and integrate to our every part of your business.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-green-600 bg-green-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Support</h3>
+      <p class="text-sm text-gray-500">Send important updates from here to your team’s Support channels.</p>
+    </div>
+    <div>
+      <div class="flex items-center justify-center w-8 h-8 mb-4 text-blue-600 bg-blue-100 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z"
+            clip-rule="evenodd"
+          />
+          <path
+            d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z"
+          />
+        </svg>
+      </div>
+      <h3 class="mb-2 text-base font-semibold leading-tight text-gray-900">Finger Printing for Robots</h3>
+      <p class="text-sm text-gray-500">Goals, Breakouts, Instant notifications, Comparisons, Annotations and Cohort Analysis!</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="grid grid-cols-1 gap-20 px-4 py-24 mx-auto max-w-7xl lg:px-16 xl:px-24 md:grid-cols-2 lg:grid-cols-3">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mb-4 text-purple-700" aria-hidden="true">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+      />
+    </svg>
+    <h3 class="mb-3 text-lg font-medium leading-tight text-gray-900">Unify your payments stack</h3>
+    <p class="text-base leading-relaxed text-gray-600">
+      Manage all your online and offline sales in one place with a single integration, simplifying reporting and reconciliation. Terminal works seamlessly with Payments, Connect, and Billing.
+    </p>
+  </div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mb-4 text-purple-700" aria-hidden="true">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+      />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+    </svg>
+    <h3 class="mb-3 text-lg font-medium leading-tight text-gray-900">Own your in-store experience</h3>
+    <p class="text-base leading-relaxed text-gray-600">
+      Provide a seamless customer experience across channels, like reserving online and picking up in store. Our SDKs make it easy to integrate into your own mobile and web applications to accept
+      in-store payments.
+    </p>
+  </div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mb-4 text-purple-700" aria-hidden="true">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"
+      />
+    </svg>
+    <h3 class="mb-3 text-lg font-medium leading-tight text-gray-900">Grow your platform’s revenue</h3>
+    <p class="text-base leading-relaxed text-gray-600">
+      Add in-person payments to your platform or marketplace. Using Terminal with Connect, you can onboard users for online and in-person payments, and unify their payouts across channels.
+    </p>
+  </div>
+</section>
+
+<section class="bg-gray-900">
+  <div class="w-full px-4 py-20 mx-auto text-center max-w-7xl md:w-4/5 lg:w-4/6">
+    <h1 class="mt-3 mb-10 text-xl font-extrabold text-white md:leading-snug md:text-3xl">
+      “Implementation is a breeze, particularly because the team at Hellonext is
+      <span class="text-white bg-transparent bg-clip-border xl:bg-clip-text xl:text-transparent xl:bg-gradient-to-r from-green-400 to-purple-500"> very fast to respond and help </span>
+      where needed, even if it means rolling out new features on their platform.  We're super happy and are loving how Hellonext brings us closer to the members of our community“
+    </h1>
+    <div class="mx-auto mb-3 shadow-lg avatar"><img src="" alt="Praveen Juge" /></div>
+    <p class="text-base font-medium text-gray-200">Praveen Juge</p>
+    <p class="text-xs font-medium text-gray-400">CEO, Birds</p>
+  </div>
+</section>
+
+<section class="px-4 py-24 mx-auto max-w-7xl">
+  <h2 class="mb-4 text-xl font-bold md:text-3xl">Frequently Asked Questions</h2>
+  <div class="grid grid-cols-1 gap-0 text-gray-600 md:grid-cols-2 md:gap-16">
+    <div>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">What is Hellonext?</h5>
+      <p>
+        Hellonext is a powerful tool for product managers and SaaS product owners to gather, organize and respond to feedback and feature requests from their customers with ease. Designed to enable
+        your customers to provide feedback easily, so that you can build products better for them.
+      </p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Can I try Hellonext for free?</h5>
+      <p>Yes. You can try Hellonext free for 7 (seven) days. No restrictions on the features or users.</p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Is there a discount for Startups and Colleges?</h5>
+      <p>
+        Yes. We are a startup too, and we would love to be with you on this journey. There is a $10/month plan for startups and educational institutions. Check your eligibility
+        <a href="https://help.hellonext.co/faq/startup-eligibility/" target="_blank">here</a>.
+      </p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Do the subscriptions renew automatically?</h5>
+      <p>
+        Yes. The billing happens every month automagically. You will receive a renewal notice three days before the actual renewal happens. We use the amazing tool called
+        <a href="https://paddle.com" target="_blank">Paddle</a> for processing payments.
+      </p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Is Hellonext free for open-source?</h5>
+      <p>Yes. No strings attached. Free forever.</p>
+    </div>
+    <div>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Why Hellonext?</h5>
+      <p>
+        Hellonext was created at <a href="https://www.skcript.com/" target="_blank">Skcript</a>, to gather feedback on our products and services from our customers. Our horizon slowly but steadily
+        started expanding, and today, over 800 organizations rely on Hellonext to organize, their feedback. Our promise has always been the same; listen to customers, build what they need, and grow
+        with them.
+      </p>
+      <p>With Hellonext, you will be supporting a team of bootstrapped engineers, who are building, improving and designing Hellonext, every single day.</p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Can I self-host Hellonext?</h5>
+      <p>Yes. Only for enterprise customers.</p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">Can I cancel the plan at any time?</h5>
+      <p>It will be a sad day for our team, and we would do whatever it takes to make you our happiest customer. But if you still insist, you can.</p>
+      <h5 class="mt-10 mb-3 font-semibold text-gray-900">How do I contact support for more information?</h5>
+      <p>
+        There are multiple support channels for us. If you prefer email, please write to support@hellonext.co. If you prefer chat support, please
+        <a href="#" class="underline">click here</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 py-20 mx-auto max-w-7xl">
+  <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-32 gap-x-10 lg:gap-x-24">
+    <div>
+      <h2 class="mb-3 text-3xl font-extrabold leading-tight tracking-tight text-center text-black sm:text-left md:text-4xl">Become a Partner</h2>
+      <p class="mb-6 text-lg text-center text-gray-600 sm:text-left md:text-xl">Let's put our heads together to build a successful partnership to benefit both your customers and your business.</p>
+      <a href="#" class="w-full btn btn-primary btn-lg sm:w-auto">Become a Partner</a>
+    </div>
+    <div class="flex flex-col flex-grow space-y-5">
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Email APIs, SMTP Relay, and Webhooks</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Suppression Management</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Email Tracking and Analytics</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">99.99% Guaranteed Uptime SLA</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">5 Days of Log Retention</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Limited 24/7 Ticket Support</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">1 Dedicated IP (Foundation 100k and up)</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">1,000 Email Address Validations</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Host events together or get your event sponsored</p>
+      </div>
+      <div class="flex items-start">
+        <svg viewBox="0 0 20 20" fill="currentColor" class="flex-none w-5 h-5 mt-1 mr-2 text-primary">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <p class="text-lg text-gray-700">Reach 90,000 customers via our integration page</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <AppFooter />
   </template>
   
   <script>
+
   export default {
     head() {
       return {
