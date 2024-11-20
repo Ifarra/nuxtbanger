@@ -5,7 +5,7 @@
       <img src="../public/astolfo.png" alt="" class="h-8 w-8 ">
       <span class="font-extrabold text-2xl bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 text-transparent">Banger :3</span>
     </a>
-    <div class="relative hidden space-x-1 md:inline-flex" x-data="{ one: false, two: false }">
+    <div class="relative hidden space-x-1 md:inline-flex" x-data="{ one: false, two: false, guh: false }">
       <div class="relative">
         <button class="flex items-center rounded-full btn btn-sm btn-white" x-on:click="one = true">
           Features
@@ -122,15 +122,45 @@
           </div>
         </div>
       </div>
-      <a href="/picture" class="rounded-full btn btn-sm btn-white">Pictures</a>
+      <a v-if="!sessionId" href="/picture" class="rounded-full btn btn-sm btn-white">Pictures</a>
+      <div v-else class="relative">
+        <button class="flex items-center rounded-full btn btn-sm btn-white" x-on:click="guh = true">
+          Pictures
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            class="flex-none w-4 h-4 ml-1 -mr-1 transition duration-200 ease-out transform"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div
+          class="absolute top-0 z-50 w-screen max-w-md p-2 mx-0 my-12 text-sm text-gray-800 transform bg-white rounded shadow lg:left-1/2 lg:-translate-x-1/2"
+          x-show.transition.in.opacity.out.opacity="guh"
+          x-on:click.away="guh = false"
+          x-cloak
+        >
+          <p class="pt-2 pl-3 mb-1 text-xs font-semibold tracking-wide text-gray-500 uppercase">Picture collection</p>
+          <div class="flex flex-col space-y-1 font-medium text-gray-800">
+            <a href="/collection/public" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Public Collection</a>
+            <a href="/collection/private" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Private Collection</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="flex items-center space-x-1">
       <div v-if="!sessionId" class="pl-8">
         <a href="/sign-in" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</a>
         <a href="/sign-up" class="rounded-full btn btn-sm btn-dark">Sign up</a>
       </div>
-      <div v-else :sign-out-options="{ sessionId }"  class="pl-28">
-        <SignOutButton />
+      <div v-else :sign-out-options="{ sessionId }"  class="pl-4 md:pl-28">
+        <SignOutButton class="btn btn-primary" />
       </div>
       
       <div class="inline-flex md:hidden" x-data="{ open: false }">

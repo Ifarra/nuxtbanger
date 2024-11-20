@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['vue-clerk/nuxt'],
+  modules: ['vue-clerk/nuxt', '@nuxthub/core', '@nuxt/image'],
   clerk: {
     appearance: {},
   },

@@ -1,6 +1,6 @@
 <template>
     <section class="px-4 pt-24 md:py-24 mx-auto max-w-7xl">
-      <button v-if="sessionId" @click="promptForUrl" class="w-full btn btn btn-light-primary">Add Picture</button>
+      <button v-if="sessionId" @click="promptForUrl" class="w-full btn btn btn-light-primary">Add Private Picture</button>
       <div class="py-5">
         <div class="masonry md:masonry-md space-y-4">
           <div v-if="isLoading" class="w-full h-60 bg-gray-300 rounded-xl animate-pulse" v-for="n in 9" :key="n"></div>
@@ -67,6 +67,7 @@ export default {
       u_id: '',
       u_name: '',
       picture_url: '',
+      publicity: 'private',
     });
     
     const config = useRuntimeConfig();
@@ -83,7 +84,8 @@ export default {
         .from('pictures')
         .select('*')
         .range(offset, offset + limit - 1)
-        .filter('publicity', 'eq', 'public'); // Fetch from offset to offset + limit
+        .filter('u_id', 'eq', userId.value)
+        .filter('publicity', 'eq', 'private')
 
       if (error) {
         console.error(error);
@@ -138,7 +140,7 @@ export default {
       } else {
         // Refetch pictures after successful insertion
         pictures.value.unshift({u_id: userId.value, u_name: user.value.fullName, picture_url: newPicture.value.picture_url, created_at: new Date()}); 
-        newPicture.value = { u_id: '', u_name: '', picture_url: '' }; // Reset newPicture
+        newPicture.value = { u_id: '', u_name: '', picture_url: '', publicity: 'private' }; // Reset newPicture
       }
     };
 
