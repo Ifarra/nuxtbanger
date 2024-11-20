@@ -7,7 +7,7 @@
 
 <script setup>
 useHead({
-  title: 'Homepage',
+  title: 'Banger - Picture',
   meta: [
     { name: 'description', content: "cute pic" },
     { name: 'og:title', content: 'Homepage' },

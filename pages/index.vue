@@ -7,7 +7,7 @@ import AppSectionOne from '~/components/appSectionOne.vue';
 const description = ref('My amazing site.')
 
 useHead({
-  title: 'Homepage',
+  title: 'Banger - Homepage',
   meta: [
     { name: 'description', content: description },
     { name: 'og:title', content: 'Homepage' },

@@ -21,7 +21,7 @@
     const collection = route.params.collection;
 
     useHead({
-      title: 'Homepage',
+      title: 'Banger - ' + collection,
       meta: [
         { name: 'description', content: "cute pic" },
         { name: 'og:title', content: 'Homepage' },
