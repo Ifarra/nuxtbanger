@@ -15,6 +15,9 @@ export default defineNuxtConfig({
   clerk: {
     appearance: {},
   },
+  routeRules: {
+    '/proxy/**': { proxy: '/api/**' },
+  },
   runtimeConfig: {
     public: {
       supabase_url: process.env.NUXT_PUBLIC_SUPABASE_URL,
