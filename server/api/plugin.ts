@@ -9,6 +9,7 @@ interface Picture {
 
 interface RequestBody {
   image_link: string;
+  account?:string;
 }
 
 export default defineEventHandler(async (event) => {
@@ -36,19 +37,33 @@ export default defineEventHandler(async (event) => {
     return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Image link is required' }) };
   }
 
-  const { data, error } = await supabase.from('pictures').insert<Picture>([{
-    u_id: 'user_2p3KdYl30s2yIHyyvPdIhq1otLQ',
-    u_name: 'admin',
-    picture_url: body.image_link,
-    publicity: 'public'
-  }]);
+  if (body.account == 'astolfo'){
+    const { data, error } = await supabase.from('pictures').insert<Picture>([{
+      u_id: 'user_2p3KdYl30s2yIHyyvPdIhq1otLQ',
+      u_name: 'astolfo cute',
+      picture_url: body.image_link,
+      publicity: 'private'
+    }]);
 
-  if (error) {
-    console.error(error);
-    res.statusCode = 500; // Internal Server Error
-    return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Internal Server Error' }) };
+    if (error) {
+      console.error(error);
+      res.statusCode = 500; // Internal Server Error
+      return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Internal Server Error' }) };
+    }
+  } else {
+    const { data, error } = await supabase.from('pictures').insert<Picture>([{
+      u_id: 'user_2p3KdYl30s2yIHyyvPdIhq1otLQ',
+      u_name: 'admin',
+      picture_url: body.image_link,
+      publicity: 'public'
+    }]);
+
+    if (error) {
+      console.error(error);
+      res.statusCode = 500; // Internal Server Error
+      return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Internal Server Error' }) };
+    }
   }
-
   res.statusCode = 200; // OK
   return
 });
