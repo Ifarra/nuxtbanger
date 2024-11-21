@@ -15,7 +15,7 @@ interface RequestBody {
 export default defineEventHandler(async (event) => {
   const res = event.node.res;
   const headers = {
-    'Access-Control-Allow-Origin': 'Same-Origin',
+    'Access-Control-Allow-Origin': '*',
     'crossOriginResourcePolicy': 'same-origin',
     'crossOriginOpenerPolicy': 'same-origin',
     'crossOriginEmbedderPolicy': 'require-corp',
