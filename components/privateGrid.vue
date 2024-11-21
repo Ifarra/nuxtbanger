@@ -115,13 +115,23 @@ export default {
       }
     };
 
+    function getImageExtension(url) {
+      // Regular expression to match image extensions
+      const regex = /\.(jpg|jpeg|png|gif|bmp|svg|webp)([^\s]*)/i;
+      const match = url.match(regex);
+      
+      // If a match is found, return the extension without extra characters
+      return match ? match[1] : null;
+    }
+
     const downloadImage = async (url, userName, id) => {
       try {
-        const response = await fetch(url);
+        //alternavite https://api.cors.lol/?url=
+        const response = await fetch('https://wsrv.nl/?url=' + url + '&n=-1');
         const blob = await response.blob();
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = `${userName.replace(/\s+/g, '_')}_${id}.jpg`; // Specify the filename
+        link.download = `${userName.replace(/\s+/g, '_')}_${id}.` + getImageExtension(url); // Specify the filename
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
