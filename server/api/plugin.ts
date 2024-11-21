@@ -20,9 +20,7 @@ export default defineEventHandler(async (event) => {
     'Access-Control-Allow-Origin': '*', // Replace with the actual origin of your frontend
     'Access-Control-Allow-Methods': 'POST', // Add allowed methods if needed
     'Access-Control-Allow-Headers': 'Content-Type', // Add allowed headers if needed
-    'Access-Control-Allow-Credentials': 'true', // Set to true if you need to include cookies or authorization headers
-    // ... other headers if needed
-    'X-XSS-Protection': 1
+    'Access-Control-Allow-Credentials': 'false', // Set to true if you need to include cookies or authorization headers
   }
   setHeaders(event, headers)
 
