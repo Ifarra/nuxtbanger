@@ -159,7 +159,7 @@
         <a href="/sign-in" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</a>
         <a href="/sign-up" class="rounded-full btn btn-sm btn-dark">Sign up</a>
       </div>
-      <div v-else :sign-out-options="{ sessionId }"  class="pl-4 md:pl-28">
+      <div v-else :sign-out-options="{ sessionId }"  class="pl-4 md:pl-20">
         <SignOutButton class="btn btn-primary" />
       </div>
       
