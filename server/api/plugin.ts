@@ -1,3 +1,5 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:4287540398.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3606775416.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:263038114.
 import { createClient } from '@supabase/supabase-js';
 
@@ -15,11 +17,11 @@ interface RequestBody {
 export default defineEventHandler(async (event) => {
   const res = event.node.res;
   const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'crossOriginResourcePolicy': 'same-origin',
-    'crossOriginOpenerPolicy': 'same-origin',
-    'crossOriginEmbedderPolicy': 'require-corp',
-    'contentSecurityPolicy': "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+    'Access-Control-Allow-Origin': '*', // Replace with the actual origin of your frontend
+    'Access-Control-Allow-Methods': 'POST', // Add allowed methods if needed
+    'Access-Control-Allow-Headers': 'Content-Type', // Add allowed headers if needed
+    'Access-Control-Allow-Credentials': 'true', // Set to true if you need to include cookies or authorization headers
+    // ... other headers if needed
     'X-XSS-Protection': 1
   }
   setHeaders(event, headers)
@@ -31,8 +33,7 @@ export default defineEventHandler(async (event) => {
   // Check if image_link is provided
   if (!body.image_link) {
     res.statusCode = 400; // Bad Request
-    return send(event, JSON.stringify({ error: 'Image link is required' }));
-    
+    return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Image link is required' }) };
   }
 
   const { data, error } = await supabase.from('pictures').insert<Picture>([{
@@ -45,9 +46,9 @@ export default defineEventHandler(async (event) => {
   if (error) {
     console.error(error);
     res.statusCode = 500; // Internal Server Error
-    return send(event, JSON.stringify({ error: 'Internal Server Error' }));
+    return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Internal Server Error' }) };
   }
 
   res.statusCode = 200; // OK
-  return send(event, JSON.stringify({ message: 'Picture uploaded successfully' }));
+  return { statusCode: res.statusCode, body: JSON.stringify({ message: 'Picture uploaded successfully' }) };
 });
