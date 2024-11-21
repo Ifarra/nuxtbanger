@@ -1,6 +1,3 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:4287540398.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3606775416.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:263038114.
 import { createClient } from '@supabase/supabase-js';
 
 interface Picture {
@@ -18,9 +15,8 @@ export default defineEventHandler(async (event) => {
   const res = event.node.res;
   const headers = {
     'Access-Control-Allow-Origin': '*', // Replace with the actual origin of your frontend
-    'Access-Control-Allow-Methods': 'POST', // Add allowed methods if needed
-    'Access-Control-Allow-Headers': 'Content-Type', // Add allowed headers if needed
-    'Access-Control-Allow-Credentials': 'false', // Set to true if you need to include cookies or authorization headers
+    'Access-Control-Allow-Methods': 'POST, OPTIONS', // Add allowed methods if needed
+    'Access-Control-Allow-Headers': 'Content-Type', // Add allowed headers if needed 
   }
   setHeaders(event, headers)
 
@@ -48,5 +44,5 @@ export default defineEventHandler(async (event) => {
   }
 
   res.statusCode = 200; // OK
-  return { statusCode: res.statusCode, body: JSON.stringify({ message: 'Picture uploaded successfully' }) };
+  return { statusCode: res.statusCode };
 });
