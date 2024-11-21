@@ -20,6 +20,12 @@ export default defineEventHandler(async (event) => {
   }
   setHeaders(event, headers)
 
+    // Handle preflight requests
+    if (event.node.req.method === 'OPTIONS') {
+      event.node.res.statusCode = 204; // No Content
+      return;
+    }
+
   const body = await readBody<RequestBody>(event);
   const config = useRuntimeConfig();
   const supabase = createClient(config.public.supabase_url, config.public.supabase_key);
@@ -44,5 +50,5 @@ export default defineEventHandler(async (event) => {
   }
 
   res.statusCode = 200; // OK
-  return { statusCode: res.statusCode };
+  return
 });
