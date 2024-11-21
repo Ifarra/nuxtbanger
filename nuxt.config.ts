@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     appearance: {},
   },
   routeRules: {
-    '/proxy/**': { proxy: '/api/**' },
+    '/proxy/**': { proxy: '/api/**', cors: false },
   },
   runtimeConfig: {
     public: {

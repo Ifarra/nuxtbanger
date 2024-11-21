@@ -14,9 +14,9 @@ interface RequestBody {
 export default defineEventHandler(async (event) => {
   const res = event.node.res;
   const headers = {
-    'Access-Control-Allow-Origin': '*', // Replace with the actual origin of your frontend
-    'Access-Control-Allow-Methods': 'POST, OPTIONS', // Add allowed methods if needed
-    'Access-Control-Allow-Headers': 'Content-Type', // Add allowed headers if needed 
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': '*',
+    'Access-Control-Allow-Headers': '*',
   }
   setHeaders(event, headers)
 
