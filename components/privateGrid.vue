@@ -38,14 +38,14 @@
                             {{ picture.imageTitle }}
                           </h3>
                           
-                            <time class="block text-sm text-gray-500">
+                          <time class="block text-xs md:text-sm text-gray-500">
                           {{ new Date(picture.created_at).toLocaleDateString(undefined, {
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: 'numeric',
+                                            year: '2-digit',
+                                            month: 'short',
+                                            day: '2-digit',
                                             hour: 'numeric',
                                             minute: 'numeric'
-                                          }) }} | uploaded by: {{ picture.users.userName }} 
+                                          }) }} | by: {{ picture.users.userName }} 
                         </time>
                           </div>
                           
@@ -69,6 +69,13 @@
                             Banger
                           </span>
                         </div>
+
+                        <hr class="my-3 h-px border-0 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600" />
+
+                          <div>
+                              <PictureLikes :imageId="picture.id" />
+                          </div>
+
                       </div>
                     </article>
                   </div>

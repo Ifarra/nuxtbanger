@@ -19,13 +19,14 @@
                   <button type="button" class="btn btn-light btn-sm btn-icon" aria-label="Close" x-on:click="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                 </div>
                 <div class="dialog-body">
-                  <NuxtImg
+                  <div>
+                    <NuxtImg
                     :key="picture.id"
-                    x-spread="trigger"
                     :src="picture.imageUrl"
                     class="w-full h-auto rounded-xl shadow"
                       @error="handleImageError"
                   />
+                  </div>
                   <div class="my-10 flex flex-col gap-2 md:gap-5">
                     <article
                       class="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
@@ -38,14 +39,14 @@
                             {{ picture.imageTitle }}
                           </h3>
                           
-                            <time class="block text-sm text-gray-500">
+                            <time class="block text-xs md:text-sm text-gray-500">
                           {{ new Date(picture.created_at).toLocaleDateString(undefined, {
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: 'numeric',
+                                            year: '2-digit',
+                                            month: 'short',
+                                            day: '2-digit',
                                             hour: 'numeric',
                                             minute: 'numeric'
-                                          }) }} | uploaded by: {{ picture.users.userName }} 
+                                          }) }} | by: {{ picture.users.userName }} 
                         </time>
                           </div>
                           
@@ -56,7 +57,7 @@
                           </p>
                         </div>
 
-                        <div class="mt-4 flex flex-wrap gap-1">
+                        <div class="my-4 flex flex-wrap gap-1">
                           <span
                             class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
                           >
@@ -68,6 +69,14 @@
                           >
                             Banger
                           </span>
+                        </div>
+
+                        <div v-if="sessionId && picture.id">
+                        <hr class="my-3 h-px border-0 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600" />
+
+                        <div>
+                            <PictureLikes :imageId="picture.id" />
+                        </div>
                         </div>
                       </div>
                     </article>
