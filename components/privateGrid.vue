@@ -138,7 +138,8 @@ export default {
         `)
         .order('id', { ascending: false })
         .range(offset, offset + limit - 1)
-        .filter('imagePublicity', 'eq', 'private'); // Fetch from offset to offset + limit
+        .filter('imagePublicity', 'eq', 'private')
+        .filter('u_id', 'eq', userId.value);
 
       if (error) {
         console.error(error);
