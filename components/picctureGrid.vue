@@ -19,7 +19,7 @@
                   <button type="button" class="btn btn-light btn-sm btn-icon" aria-label="Close" x-on:click="close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
                 </div>
                 <div class="dialog-body">
-                  <img
+                  <NuxtImg
                     :key="picture.id"
                     x-spread="trigger"
                     :src="picture.picture_url"
@@ -27,8 +27,45 @@
                       @error="handleImageError"
                   />
                   <div class="my-10 flex flex-col gap-2 md:gap-5">
-                    <p class="text-lg md:text-3xl font-extrabold">uploaded by : {{ picture.u_name }}</p>
-                    <p class="text-sm md:text-2xl font-semibold">Upload date : {{ new Date(picture.created_at) }}</p>
+                    <article
+                      class="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
+                    >
+                      <div class="w-full rounded-[10px] bg-white p-4 sm:p-6">
+                        <div class="flex gap-2 md:gap-5 items-center">
+                          <!-- <NuxtImg v-if="user" :src="user.imageUrl" class="avatar" /> -->
+                          <div>
+                            <h3 class="text-center text-2xl font-medium text-gray-900">
+                            Banger picture that i stole from the internet :D
+                          </h3>
+                            <time class="block text-sm text-gray-500">
+                          {{ new Date(picture.created_at).toLocaleDateString(undefined, {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric',
+                                            hour: 'numeric',
+                                            minute: 'numeric'
+                                          }) }} | uploaded by: {{ picture.u_name }} 
+                        </time>
+                          </div>
+                          
+                        </div>
+                        
+
+                        <div class="mt-4 flex flex-wrap gap-1">
+                          <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                          >
+                            Anime
+                          </span>
+
+                          <span
+                            class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+                          >
+                            Banger
+                          </span>
+                        </div>
+                      </div>
+                    </article>
                   </div>
                 </div>
                 <div class="dialog-footer">
@@ -74,6 +111,17 @@ export default {
     
     const limit = 10; // Maximum number of pictures to fetch
     let offset = 0; // Track the current offset for pagination
+    
+    // const fetchProfile = async (u_id) => {
+    //   const response = await fetch(`http://localhost:9002/api/avatar/${u_id}`);
+    //   if (!response.ok) {
+    //     throw new Error(`HTTP error! status: ${response.status}`);
+    //   }
+
+    //   if (response) {
+    //     return response.value
+    //   }
+    // }
 
     const fetchPictures = async () => {
       if (!hasMorePictures.value) return; // Exit if there are no more pictures
@@ -172,6 +220,7 @@ export default {
       promptForUrl,
       sessionId,
       isLoading,
+      user,
       downloadImage,
       hasMorePictures, // Expose this variable to the template
     };
