@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     public: {
       supabase_url: process.env.NUXT_PUBLIC_SUPABASE_URL,
       supabase_key: process.env.NUXT_PUBLIC_SUPABASE_KEY,
-      clerk_private: process.env.NUXT_CLERK_SECRET_KEY
+      clerk_private: process.env.NUXT_CLERK_SECRET_KEY,
+      clerk_webhook: process.env.NUXT_CLERK_WEBHOOK_KEY
     }
   }
 })
