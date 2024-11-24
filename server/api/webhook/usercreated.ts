@@ -6,7 +6,7 @@ import { Webhook } from 'svix';
 const config = useRuntimeConfig()
 
 const supabaseUrl = config.public.supabase_url as string;
-const supabaseKey = config.public.clerk_private as string;
+const supabaseKey = config.public.supabase_key as string;
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const webhookSecret = config.public.clerk_webhook as string;
