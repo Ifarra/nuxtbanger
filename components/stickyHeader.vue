@@ -1,10 +1,10 @@
 <template>
    <header class="z-30 w-full px-2 py-4 bg-white sm:px-4 fixed shadow-lg">
   <div class="flex items-center justify-between mx-auto max-w-7xl">
-    <a href="/" title="Kutty Home Page" class="flex items-center gap-4">
+    <NuxtLink to="/" title="Kutty Home Page" class="flex items-center gap-4">
       <img src="../public/astolfo.png" alt="" class="h-8 w-8 ">
       <span class="font-extrabold text-2xl bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500 text-transparent">Banger :3</span>
-    </a>
+    </NuxtLink>
     <div class="relative hidden space-x-1 md:inline-flex" x-data="{ one: false, two: false, guh: false }">
       <div class="relative">
         <button class="flex items-center rounded-full btn btn-sm btn-white" x-on:click="one = true">
@@ -122,7 +122,7 @@
           </div>
         </div>
       </div>
-      <a v-if="!sessionId" href="/picture" class="rounded-full btn btn-sm btn-white">Pictures</a>
+      <NuxtLink v-if="!sessionId" to="/picture" class="rounded-full btn btn-sm btn-white">Pictures</NuxtLink>
       <div v-else class="relative">
         <button class="flex items-center rounded-full btn btn-sm btn-white" x-on:click="guh = true">
           Pictures
@@ -148,16 +148,16 @@
         >
           <p class="pt-2 pl-3 mb-1 text-xs font-semibold tracking-wide text-gray-500 uppercase">Picture collection</p>
           <div class="flex flex-col space-y-1 font-medium text-gray-800">
-            <a href="/collection/public" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Public Collection</a>
-            <a href="/collection/private" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Private Collection</a>
+            <NuxtLink to="/collection/public" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Public Collection</NuxtLink>
+            <NuxtLink to="/collection/private" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Private Collection</NuxtLink>
           </div>
         </div>
       </div>
     </div>
     <div class="flex items-center space-x-1">
       <div v-if="!sessionId" class="pl-8">
-        <a href="/sign-in" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</a>
-        <a href="/sign-up" class="rounded-full btn btn-sm btn-dark">Sign up</a>
+        <NuxtLink to="/sign-in" class="hidden rounded-full btn btn-sm btn-white md:inline-flex">Sign in</NuxtLink>
+        <NuxtLink to="/sign-up" class="rounded-full btn btn-sm btn-dark">Sign up</NuxtLink>
       </div>
       <div v-else :sign-out-options="{ sessionId }"  class="pl-4 md:pl-20">
         <SignOutButton class="btn btn-primary" />

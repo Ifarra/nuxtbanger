@@ -48,13 +48,12 @@ useHead({
         </div>
       </div>
       <div class="w-full mx-auto md:mt-20 text-center md:w-10/12">
-        <div class="w-full rounded-lg shadow-2xl" 
-             style="background-image: url('https://www.hdwallpapers.in/download/astolfo_with_purple_eyes_hd_astolfo-1920x1080.jpg');
-                    background-size: cover;
-                    background-position: center;
-                    padding-bottom: 56.25%; /* Maintain aspect ratio (16:9) */
-                    ">
-        </div>
+        <NuxtImg
+          src="https://www.hdwallpapers.in/download/astolfo_with_purple_eyes_hd_astolfo-1920x1080.jpg"
+          alt="Astolfo"
+          class="w-full rounded-lg shadow-2xl"
+          placeholder="https://placehold.co/600x400?text=Hewwo :3"
+        />
       </div>
     </section>
 

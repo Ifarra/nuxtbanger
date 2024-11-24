@@ -8,7 +8,7 @@
           <div x-data="drawer()" v-for="picture in pictures" :key="picture.id" class="break-inside">
             <NuxtImg
               x-spread="trigger"
-              :src="picture.picture_url"
+              :src="picture.imageUrl"
               class="w-full h-auto rounded-xl shadow"
                 @error="handleImageError"
               placeholder
@@ -22,7 +22,7 @@
                   <NuxtImg
                     :key="picture.id"
                     x-spread="trigger"
-                    :src="picture.picture_url"
+                    :src="picture.imageUrl"
                     class="w-full h-auto rounded-xl shadow"
                       @error="handleImageError"
                   />
@@ -32,11 +32,12 @@
                     >
                       <div class="w-full rounded-[10px] bg-white p-4 sm:p-6">
                         <div class="flex gap-2 md:gap-5 items-center">
-                          <!-- <NuxtImg v-if="user" :src="user.imageUrl" class="avatar" /> -->
+                          <NuxtImg :src="picture.users.profileUrl" class="avatar" />
                           <div>
-                            <h3 class="text-center text-2xl font-medium text-gray-900">
-                            Banger picture that i stole from the internet :D
+                            <h3 class="text-2xl font-medium text-gray-900">
+                            {{ picture.imageTitle }}
                           </h3>
+                          
                             <time class="block text-sm text-gray-500">
                           {{ new Date(picture.created_at).toLocaleDateString(undefined, {
                                             year: 'numeric',
@@ -44,12 +45,16 @@
                                             day: 'numeric',
                                             hour: 'numeric',
                                             minute: 'numeric'
-                                          }) }} | uploaded by: {{ picture.u_name }} 
+                                          }) }} | uploaded by: {{ picture.users.userName }} 
                         </time>
                           </div>
                           
                         </div>
-                        
+                        <div class="pt-2 md:pt-4 pl-2">
+                          <p>
+                            {{ picture.imageDescription }}
+                          </p>
+                        </div>
 
                         <div class="mt-4 flex flex-wrap gap-1">
                           <span
@@ -66,7 +71,7 @@
                         </div>
                       </div>
                     </article>
-                  </div> 
+                  </div>
                 </div>
                 <div class="dialog-footer">
                   <button type="button" class="btn btn-secondary" x-on:click="close">Close</button>
@@ -101,10 +106,11 @@ export default {
     const isLoading = ref(true);
     const hasMorePictures = ref(true); // Track if there are more pictures
     const newPicture = ref({
-      u_id: '',
-      u_name: '',
-      picture_url: '',
-      publicity: 'private',
+      userId: '',
+      imageTitle: '',
+      imageDescription: '',
+      imageUrl: '',
+      imagePublicity: 'private'
     });
     
     const config = useRuntimeConfig();
@@ -118,11 +124,14 @@ export default {
 
       isLoading.value = true;
       const { data, error } = await supabase
-        .from('pictures')
-        .select('*')
+        .from('images')
+        .select(`
+        *,
+        users ( userName, profileUrl)
+        `)
+        .order('id', { ascending: false })
         .range(offset, offset + limit - 1)
-        .filter('u_id', 'eq', userId.value)
-        .filter('publicity', 'eq', 'private')
+        .filter('imagePublicity', 'eq', 'private'); // Fetch from offset to offset + limit
 
       if (error) {
         console.error(error);
@@ -146,8 +155,16 @@ export default {
 
     const promptForUrl = () => {
       const url = prompt("Enter picture URL:");
+      let title;
+      let description;
       if (url) {
-        newPicture.value.picture_url = url;
+        title = prompt("Enter picture title:");
+        description = prompt("Enter picture description:");
+      }
+      if (url) {
+        newPicture.value.imageUrl = url;
+        newPicture.value.imageTitle = title? title : 'Untitled';
+        newPicture.value.imageDescription = description? description : 'No description';
         addPicture();
       }
     };
@@ -178,16 +195,23 @@ export default {
     };
 
     const addPicture = async () => {
-      newPicture.value.u_id = userId.value;
-      newPicture.value.u_name = user.value ? user.value.fullName : 'Anonymous';
+      newPicture.value.userId = userId.value;
 
-      const { data, error } = await supabase.from('pictures').insert([newPicture.value]);
+      const { data, error } = await supabase.from('images').insert([newPicture.value]);
       if (error) {
         console.error(error);
       } else {
         // Refetch pictures after successful insertion
-        pictures.value.unshift({u_id: userId.value, u_name: user.value.fullName, picture_url: newPicture.value.picture_url, created_at: new Date()}); 
-        newPicture.value = { u_id: '', u_name: '', picture_url: '', publicity: 'private' }; // Reset newPicture
+        pictures.value.unshift({
+          userId: userId.value,
+          imageTitle: newPicture.value.imageTitle,
+          imageDescription: newPicture.value.imageDescription,
+          imageUrl: newPicture.value.imageUrl,
+          imagePublicity: newPicture.value.imagePublicity,
+          users: { userName: user.value.fullName, profileUrl: user.value.imageUrl }, 
+          created_at: new Date()
+        });
+        newPicture.value = { userId: '', imageTitle: '', imageDescription: '', imageUrl: ''}; // Reset newPicture
       }
     };
 

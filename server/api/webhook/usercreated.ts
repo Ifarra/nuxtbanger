@@ -66,7 +66,7 @@ export default defineEventHandler(async (event) => {
       console.error('Error saving user to database:', error);
       return {
         statusCode: 500,
-        body: { message: 'Failed to save user' },
+        body: { message: `Failed to save user ${error}` },
       };
     }
 
