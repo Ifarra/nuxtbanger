@@ -201,10 +201,9 @@
             </svg>
             <span class="sr-only">Close Menu</span>
           </button>
-          <div class="grid grid-cols-2 gap-1">
-            <a href="#" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Pricing</a>
-            <a href="#" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Blog</a>
-            <a href="#" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Sign in</a>
+          <div class="grid grid-cols-2 gap-1" v-if="sessionId">
+            <a href="/collection/private" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Private Collection</a>
+            <a href="/collection/public" class="px-3 py-2 transition rounded hover:bg-gray-200 hover:text-primary">Public Collection</a>
           </div>
           <p class="pt-2 pl-3 text-xs font-semibold tracking-wide text-gray-500 uppercase">Features</p>
           <div class="grid grid-cols-2 gap-1">

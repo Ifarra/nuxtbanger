@@ -139,7 +139,7 @@ export default {
         .order('id', { ascending: false })
         .range(offset, offset + limit - 1)
         .filter('imagePublicity', 'eq', 'private')
-        .filter('u_id', 'eq', userId.value);
+        .filter('userId', 'eq', userId.value);
 
       if (error) {
         console.error(error);
