@@ -11,12 +11,21 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['vue-clerk/nuxt', '@nuxthub/core', '@nuxt/image'],
+  modules: [
+    'vue-clerk/nuxt',
+    '@nuxthub/core',
+    '@nuxt/image',
+    'nuxt-gtag',
+    '@nuxtjs/seo'
+  ],
   clerk: {
     appearance: {},
   },
   routeRules: {
     '/proxy/**': { proxy: '/api/**', cors: false },
+  },
+  gtag: {
+    id: 'G-6C51FQJE3K'
   },
   runtimeConfig: {
     public: {
