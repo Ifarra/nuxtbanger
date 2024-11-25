@@ -1,10 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
 interface Picture {
-  u_id: string;
-  u_name: string;
-  picture_url: string;
-  publicity: string;
+  userId: string;
+  imageTitle: string;
+  imageDescription: string;
+  imageUrl: string;
+  imagePublicity: string;
 }
 
 interface RequestBody {
@@ -39,10 +40,11 @@ export default defineEventHandler(async (event) => {
 
   if (body.account == 'astolfo'){
     const { data, error } = await supabase.from('pictures').insert<Picture>([{
-      u_id: 'user_2p3KdYl30s2yIHyyvPdIhq1otLQ',
-      u_name: 'astolfo cute',
-      picture_url: body.image_link,
-      publicity: 'private'
+      userId: 'user_2pI70FL5xombMLWvmPlWQfP0NdV',
+      imageTitle: 'Archived Imgae',
+      imageDescription: 'No description :3',
+      imageUrl: body.image_link,
+      imagePublicity: 'private'
     }]);
 
     if (error) {
@@ -52,10 +54,11 @@ export default defineEventHandler(async (event) => {
     }
   } else {
     const { data, error } = await supabase.from('pictures').insert<Picture>([{
-      u_id: 'user_2p3KdYl30s2yIHyyvPdIhq1otLQ',
-      u_name: 'admin',
-      picture_url: body.image_link,
-      publicity: 'public'
+      userId: 'user_2pIdR9pl8sUFDNPjHtNvzfORLPX',
+      imageTitle: 'Daily Post',
+      imageDescription: 'No description :3',
+      imageUrl: body.image_link,
+      imagePublicity: 'public'
     }]);
 
     if (error) {
