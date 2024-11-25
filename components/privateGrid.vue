@@ -82,7 +82,7 @@
                 </div>
                 <div class="dialog-footer">
                   <button type="button" class="btn btn-secondary" x-on:click="close">Close</button>
-                  <button type="button" class="btn btn-primary" @click="downloadImage(picture.picture_url, picture.u_name, picture.id)">Download image</button>
+                  <button type="button" class="btn btn-primary" @click="downloadImage(picture.imageUrl, picture.users.userName, picture.id)">Download image</button>
                 </div>
               </div>
             </div>

@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '/proxy/**': { proxy: '/api/**', cors: false },
   },
   gtag: {
-    id: 'G-6C51FQJE3K'
+    id: process.env.GOOGLE_ANALYTICS
   },
   runtimeConfig: {
     public: {
