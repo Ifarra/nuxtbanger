@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (body.account == 'astolfo'){
-    const { data, error } = await supabase.from('pictures').insert<Picture>([{
+    const { data, error } = await supabase.from('images').insert<Picture>([{
       userId: 'user_2pI70FL5xombMLWvmPlWQfP0NdV',
       imageTitle: 'Archived Imgae',
       imageDescription: 'No description :3',
@@ -53,7 +53,7 @@ export default defineEventHandler(async (event) => {
       return { statusCode: res.statusCode, body: JSON.stringify({ error: 'Internal Server Error' }) };
     }
   } else {
-    const { data, error } = await supabase.from('pictures').insert<Picture>([{
+    const { data, error } = await supabase.from('images').insert<Picture>([{
       userId: 'user_2pIdR9pl8sUFDNPjHtNvzfORLPX',
       imageTitle: 'Daily Post',
       imageDescription: 'No description :3',
