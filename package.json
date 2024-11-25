@@ -14,7 +14,6 @@
     "@nuxt/image": "^1.8.1",
     "@nuxthub/core": "^0.8.7",
     "@nuxtjs/proxy": "^2.1.0",
-    "@nuxtjs/seo": "^2.0.2",
     "@supabase/supabase-js": "^2.46.1",
     "autoprefixer": "^10.4.20",
     "install": "^0.13.0",

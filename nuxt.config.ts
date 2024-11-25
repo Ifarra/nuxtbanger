@@ -15,8 +15,7 @@ export default defineNuxtConfig({
     'vue-clerk/nuxt',
     '@nuxthub/core',
     '@nuxt/image',
-    'nuxt-gtag',
-    '@nuxtjs/seo'
+    'nuxt-gtag'
   ],
   clerk: {
     appearance: {},
